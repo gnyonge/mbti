@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/Container'
-import ResultBox from '../components/ResultBox'
+import ResultBox from '../components/result/ResultBox'
 
 const Result = () => {
   return (

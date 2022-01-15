@@ -1,5 +1,6 @@
 import React from 'react'
-import TopSection from './TopSection'
+import { useSelector } from 'react-redux'
+import TopSection from '../TopSection'
 import SelectButton from './SelectButton'
 import QuestionContent from './QuestionContent'
 import ProgressBar from './ProgressBar'
@@ -23,15 +24,20 @@ const ButtonBox = styled.div`
   bottom: 80px;  
 `
 const QuestionBox = () => {
+
+  const questions = useSelector(state => state.mbti.questions)
+  const now = useSelector(state => state.mbti.now)
+  const question = questions[now]
+
   return (
     <QBox>
       <TopSection />
       <QSection>
         <ProgressBar />
-        <QuestionContent content='질문입니다~~~'/>
+        <QuestionContent question={question.q}/>
         <ButtonBox>
-          <SelectButton color='#F1F1F1'/>
-          <SelectButton />
+          <SelectButton color='#F1F1F1' answer={question.a[0]} />
+          <SelectButton answer={question.a[1]} />
         </ButtonBox>
       </QSection>
     </QBox>

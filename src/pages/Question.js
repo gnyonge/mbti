@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/Container'
-import QuestionBox from '../components/QuestionBox'
+import QuestionBox from '../components/question/QuestionBox'
 
 const Question = () => {
   return (

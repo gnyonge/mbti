@@ -8,13 +8,13 @@ const QContent = styled.div`
 const QMark = styled.div`
   color: #00D37A;
 `
-const QuestionContent = ({content}) => {
+const QuestionContent = ({ question }) => {
   return (
     <QContent>
       <QMark>
         Q.
       </QMark>
-      {content}
+      {question}
     </QContent>
   )
 }
