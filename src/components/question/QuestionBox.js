@@ -33,7 +33,7 @@ const QuestionBox = () => {
     <QBox>
       <TopSection />
       <QSection>
-        <ProgressBar />
+        <ProgressBar now={now}/>
         <QuestionContent question={question.q}/>
         <ButtonBox>
           <SelectButton color='#F1F1F1' answer={question.a[0]} />

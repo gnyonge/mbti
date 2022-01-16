@@ -1,12 +1,18 @@
 import React from 'react'
-import Container from '../components/Container'
 import QuestionBox from '../components/question/QuestionBox'
+import styled from 'styled-components'
+
+const QContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+`
 
 const Question = () => {
   return (
-    <Container>
+    <QContainer>
       <QuestionBox />
-    </Container>
+    </QContainer>
   )
 }
 

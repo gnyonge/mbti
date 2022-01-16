@@ -20,7 +20,6 @@ const Select = styled.div`
 `
 
 const SelectButton = ({color, answer}) => {
-
   const now = useSelector(state => state.mbti.now)
   const answerValue = answer.value
 
