@@ -15,7 +15,7 @@ const QuestionContent = ({ question }) => {
       <QMark>
         Q.
       </QMark>
-      {question.split("\n").map((txt) => (
+      {question.split("\n").map((txt) => ( // 텍스트 줄바꿈
           <div key={txt}>
             {txt}
             <br />

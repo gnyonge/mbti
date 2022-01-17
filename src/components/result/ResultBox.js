@@ -8,6 +8,9 @@ const RBox = styled.div`
   height: max-content;
   border: solid 2px #000000;
   margin: 12px 0;
+  @media screen and (max-width: 424px) {
+      width: ${props => props.width ? '48%' : '90%'};
+    }
 `
 const RSection = styled.div`
   height: max-content;
@@ -26,7 +29,6 @@ const ResultBox = ({ children, width }) => {
         {children}
       </RSection>
     </RBox>
-    
   )
 }
 

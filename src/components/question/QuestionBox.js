@@ -12,6 +12,9 @@ const QBox = styled.div`
   height: 578px;
   border: solid 2px #000000;
   position: relative;
+  @media screen and (max-width: 424px) {
+      width: 90%;
+    }
 `
 const QSection = styled.div`
   height: max-content;
@@ -21,13 +24,16 @@ const QSection = styled.div`
 `
 const ButtonBox = styled.div`
   position: absolute;
-  bottom: 80px;  
+  bottom: 80px;
+  @media screen and (max-width: 424px) {
+      width: 90%;
+    }
 `
 const QuestionBox = () => {
 
-  const questions = useSelector(state => state.mbti.questions)
-  const now = useSelector(state => state.mbti.now)
-  const question = questions[now]
+  const questions = useSelector(state => state.mbti.questions) // 랜덤 정렬된 질문들
+  const now = useSelector(state => state.mbti.now) // 현재 선택완료한 질문의 갯수
+  const question = questions[now] // ex. 4개중에 3개 완료했으면 다음 질문 questions[3] 즉, 마지막 질문을 가져온다.
 
   return (
     <QBox>

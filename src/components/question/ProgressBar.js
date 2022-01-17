@@ -6,10 +6,12 @@ const BarContainer = styled.div`
   height: 29px;
   margin-top: 15px;
   margin-bottom: 30px;
+  @media screen and (max-width: 424px) {
+      width: 90%;
+    }
 `
 const Bar = styled.div`
   width: 100%;
-
   height: 4px;
   position: absolute;
   z-index: 3;
@@ -41,7 +43,6 @@ const ProgressBar = ({ now }) => {
         <Bar />
         <Now now={now+1}></Now>
       </div>
-
     </BarContainer>
   )
 }

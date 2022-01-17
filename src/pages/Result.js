@@ -12,19 +12,23 @@ import Match from '../components/result/Match'
 import MainButton from '../components/MainButton'
 import MyType from '../components/result/MyType'
 
-
 const RContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 50px 0;
+  @media screen and (max-width: 424px) {
+      width: 310px;
+    }
 `
-
 const MatchContainer = styled.div`
   width: 340px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 424px) {
+    width: 283px;
+    }
 `
 const Loading = styled.div`
   font-size: 25px;
@@ -38,14 +42,14 @@ const Loading = styled.div`
   }
 `
 const Result = () => {
-  const [result, setResult] = useState([])
-  const selected = useSelector(state => state.mbti.selected)
+  const [result, setResult] = useState([]) // 결과값
+  const selected = useSelector(state => state.mbti.selected)  // 선택된 알파벳들로 이루어진 문자열
+  // 순서대로 정렬(mbtiData.js에서 key값으로 사용하면 데이터요청에 필요한 값을 가져올 수 있음)
   const sorted = selected.split('').sort().join('')
 
   const getResult = async () => {
     const fetchedData = await axios.get(`https://ebti.realclass.co.kr/api/result/${mbtiData[sorted]}`)
-    setResult(fetchedData.data)
-    console.log(fetchedData.data)
+    setResult(fetchedData.data) // 결과값 저장
   }
 
   useEffect(() => {
@@ -78,7 +82,6 @@ const Result = () => {
         </Loading>
       }
     </>
-    
   )
 }
 

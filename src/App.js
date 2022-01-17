@@ -10,6 +10,8 @@ const AppContainer = styled.div`
   height: fit-content;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #1DD487, #25B2EA);
+  display: flex;
+  justify-content: center;
 `
 function App() {
   return (

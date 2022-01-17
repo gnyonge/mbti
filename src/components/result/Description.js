@@ -5,6 +5,9 @@ import ResultBox from './ResultBox'
 const DescriptionBox = styled.div`
   font-size: 13px;
   text-align: left;
+  @media screen and (max-width: 424px) {
+    font-size: 12px;
+    }
 `
 const Description = ({ result }) => {
   return (

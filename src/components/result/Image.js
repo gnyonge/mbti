@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const ImageBox = styled.div`
   width: ${props => props.size || '157px'};
   height: ${props => props.size || '157px'};

@@ -19,17 +19,20 @@ const Select = styled.div`
   :hover {
     cursor: pointer;
   }
+  @media screen and (max-width: 424px) {
+      width: 100%;
+    }
 `
 
 const SelectButton = ({color, answer}) => {
-  const now = useSelector(state => state.mbti.now)
-  const answerValue = answer.value
+  const now = useSelector(state => state.mbti.now) // 현재 완료한 질문의 갯수
+  const answerValue = answer.value // 선택지의 내용과 짝지어진 알파벳(mbti를 위한 값)
 
   const dispatch = useDispatch()
 
   function goNext(answerValue) {
-    dispatch(setNow(now+1))
-    dispatch(setSelected(answerValue))
+    dispatch(setNow(now+1)) // 질문의 갯수 + 1
+    dispatch(setSelected(answerValue)) // 선택된 값을 스토어에 저장
   }
 
   return ( 

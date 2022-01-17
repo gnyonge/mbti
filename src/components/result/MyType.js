@@ -19,6 +19,7 @@ const TextBox = styled.div`
   text-shadow: -1px 0 #000, 0 2px #000, 2px 0 #000, 0 -1px #000;
   color: white;
   position: absolute;
+  letter-spacing: 2px;
 `
 const ColorBox = styled.div`
   position: absolute;
@@ -26,6 +27,9 @@ const ColorBox = styled.div`
   width: 90%;
   height: 20px;
   top: 20px;
+  @media screen and (max-width: 424px) {
+      width: 80%;
+    }
 `
 const MyType = ({ result }) => {
   return (

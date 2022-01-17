@@ -14,6 +14,9 @@ const HomeContainer = styled.div`
   img {
     width: fit-content;
   }
+  @media screen and (max-width: 424px) {
+      width: 310px;
+    }
 `
 const Search = styled.div`
   background-color: #FFFFFF;
@@ -28,12 +31,22 @@ const Search = styled.div`
 `
 const Title = styled.div`
   margin: 30px 0;
+  @media screen and (max-width: 424px) {
+      img {
+        width: 90%;
+      }
+    }
 `
 const Poster = styled.div`
   margin-bottom: 40px;
+  @media screen and (max-width: 424px) {
+      img {
+        width: 90%;
+      }
+    }
 `
 const Home = () => {
-  function shuffle(array) { 
+  function shuffle(array) { // 질문배열을 랜덤으로 섞어서 반환하는 함수
     for (let index = array.length - 1; index > 0; index--) { 
       const randomPosition = Math.floor(Math.random() * (index + 1)); 
       const temporary = array[index]; 
@@ -43,15 +56,15 @@ const Home = () => {
     return array
   }
 
-  let data = shuffle(questionData)
-  for (let i=0; i<data.length; i++) {
+  let data = shuffle(questionData) 
+  for (let i=0; i<data.length; i++) { // 질문안에 선택지도 랜덤으로 만들어줌
     data[i].a = shuffle(data[i].a)
   }
   const dispatch = useDispatch();
   function saveData() {
-    dispatch(setQuestions(data));
-    dispatch(setNow(0));
-    dispatch(setSelected(null));
+    dispatch(setQuestions(data)); // 순서가 섞인 질문들을 저장함
+    dispatch(setNow(0)); // 현재 선택완료한 질문의 갯수
+    dispatch(setSelected(null)); // 현재 선택완료한 선택지(알파벳으로 된 문자열)
   }
   return (
     <HomeContainer>
