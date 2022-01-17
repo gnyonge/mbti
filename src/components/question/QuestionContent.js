@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const QContent = styled.div`
   width: 276px;
   height: max-content;
+  font-size: 18px;
 `
 const QMark = styled.div`
   color: #00D37A;
@@ -14,7 +15,12 @@ const QuestionContent = ({ question }) => {
       <QMark>
         Q.
       </QMark>
-      {question}
+      {question.split("\n").map((txt) => (
+          <div key={txt}>
+            {txt}
+            <br />
+          </div>
+        ))}
     </QContent>
   )
 }

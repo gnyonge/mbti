@@ -7,7 +7,6 @@ const ImageBox = styled.div`
   height: ${props => props.size || '157px'};
   border-radius: 50%;
   border: solid 1px black;
-  margin: 15px 0;
   img {
     width: 100%;
     height: 100%;

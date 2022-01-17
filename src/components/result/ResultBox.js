@@ -11,6 +11,7 @@ const RBox = styled.div`
 `
 const RSection = styled.div`
   height: max-content;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

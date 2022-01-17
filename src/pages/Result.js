@@ -26,7 +26,17 @@ const MatchContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `
-
+const Loading = styled.div`
+  font-size: 25px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 50px;
+  }
+`
 const Result = () => {
   const [result, setResult] = useState([])
   const selected = useSelector(state => state.mbti.selected)
@@ -49,20 +59,23 @@ const Result = () => {
         ?
         <RContainer>
           <MyType result={result}/>
-          <MainButton content1={`${result.media}`} content2={result.name} />
+          <MainButton content1={result.media} content2={result.name} />
           <Expression result={result} />
           <Description result={result}/>
           <MatchContainer>
-            <Match title='만나면 좋은 캐릭터' chemi={result.chemi.best}/>
-            <Match title='거리두기가 필요해요' chemi={result.chemi.worst}/>
+            <Match title='만나면\n좋은 캐릭터' chemi={result.chemi.best}/>
+            <Match title='거리두기가\n필요해요' chemi={result.chemi.worst}/>
           </MatchContainer>
           <Share />
-          <Link to='/' style={{ textDecoration: 'none' }}>
+          <Link to='/' style={{ textDecoration: 'none', marginTop: '30px'}}>
             <MainButton content1='테스트' content2='다시하기' color='#F56A6A'/>
           </Link>
         </RContainer>
         :
-        <h1>로딩중</h1>
+        <Loading>
+          <img src={'로딩중.png'} alt="loading" />
+          Loading...
+        </Loading>
       }
     </>
     

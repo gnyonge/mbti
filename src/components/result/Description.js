@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import ResultBox from './ResultBox'
 
 const DescriptionBox = styled.div`
-  padding: 20px 10px;
   font-size: 13px;
   text-align: left;
 `
