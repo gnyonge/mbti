@@ -35,7 +35,7 @@ const SelectButton = ({color, answer}) => {
       {
         now === 3
         ?  
-        <Link to="/result">
+        <Link to="/result" style={{ textDecoration: 'none' }}>
           <Select color={color} onClick={() => dispatch(setSelected(answerValue))}> 
             {answer.content}
           </Select>
